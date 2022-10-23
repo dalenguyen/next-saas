@@ -11,11 +11,8 @@ export const getStaticProps = async () => {
   };
 };
 
-export function Index({ lessons }) {  /*
-   * Replace the elements below with your own.
-   *
-   * Note: The corresponding styles are in the ./index.scss file.
-   */
+export function Index({ lessons }) {  
+  supabase.auth.getUser().then(console.log)
   return (
     <div
       className={`${styles.page} w-full max-w-3xl mx-auto my-16 px-2`}
