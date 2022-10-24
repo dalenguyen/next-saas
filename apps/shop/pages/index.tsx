@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useUser } from '../context/user';
 import { supabase } from '../utils';
 import styles from './index.module.scss';
 
@@ -12,7 +13,10 @@ export const getStaticProps = async () => {
 };
 
 export function Index({ lessons }) {  
-  supabase.auth.getUser().then(console.log)
+
+  const {user} = useUser()
+  console.log({user})
+
   return (
     <div
       className={`${styles.page} w-full max-w-3xl mx-auto my-16 px-2`}
